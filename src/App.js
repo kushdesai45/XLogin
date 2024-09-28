@@ -13,15 +13,13 @@ const App = () => {
   const handleSubmit = (e) => {
     e.preventDefault();
 
-    if (!formData.username || !formData.password) {
+    if (formData.username === 'user' && formData.password === 'password') {
+      setError('');
+      setWelcomeMessage('Welcome, user!');
+    } else {
       setError('Invalid username or password');
-      return;
+      setWelcomeMessage('');
     }
-
-    console.log('Logging in with:', formData);
-
-    setWelcomeMessage('Welcome, user!');
-    setError('');
   };
 
   return (
