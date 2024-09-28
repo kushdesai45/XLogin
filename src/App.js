@@ -3,7 +3,7 @@ import React, { useState } from 'react';
 const App = () => {
   const [formData, setFormData] = useState({ username: '', password: '' });
   const [error, setError] = useState('');
-  const [welcomeMessage, setWelcomeMessage] = useState(''); // State to handle the welcome message
+  const [welcomeMessage, setWelcomeMessage] = useState(''); 
 
   const handleChange = (e) => {
     const { name, value } = e.target;
@@ -13,16 +13,13 @@ const App = () => {
   const handleSubmit = (e) => {
     e.preventDefault();
 
-    // Basic validation
     if (!formData.username || !formData.password) {
       setError('Invalid username or password');
       return;
     }
 
-    // Handle login logic here
     console.log('Logging in with:', formData);
 
-    // Set the welcome message
     setWelcomeMessage('Welcome, user!');
     setError('');
   };
